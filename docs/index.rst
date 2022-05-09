@@ -1,5 +1,5 @@
 .. py-reddit documentation master file, created by
-   sphinx-quickstart on Mon May  9 17:28:34 2022.
+   sphinx-quickstart on Mon May  9 17:56:24 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -11,7 +11,6 @@ Welcome to py-reddit's documentation!
    :caption: Contents:
 
    modules
-
 
 Indices and tables
 ==================
