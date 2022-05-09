@@ -1,11 +1,8 @@
 py-reddit package
 ==============
 
-Module reddit
-----------------
-
-Module contents
----------------
+Contents of reddit
+------------------
 
 .. automodule:: reddit
    :members:
