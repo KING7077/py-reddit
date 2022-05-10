@@ -1,19 +1,8 @@
-reddit package
+py-reddit package
 ==============
 
-Submodules
-----------
-
-reddit.reddit module
---------------------
-
-.. automodule:: reddit.reddit
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
+Contents of reddit
+------------------
 
 .. automodule:: reddit
    :members:
