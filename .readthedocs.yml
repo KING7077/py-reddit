@@ -15,8 +15,4 @@ python:
     - method: pip
       path: .
       extra_requirements:
-<<<<<<< HEAD
         - docs
-=======
-        - docs
->>>>>>> 8f4201082eda9d3ef81478b309c7fa7ac05d23d5
