@@ -58,6 +58,11 @@ class Client:
 
         def selftext(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             selftext: `str`
@@ -68,6 +73,11 @@ class Client:
 
         def title(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             title: `str`
@@ -78,6 +88,11 @@ class Client:
 
         def post_url(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             post_url: `str`
@@ -88,6 +103,11 @@ class Client:
 
         def author(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             author: `str`
@@ -98,6 +118,11 @@ class Client:
 
         def image(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             image: `str`
@@ -116,6 +141,11 @@ class Client:
 
         def num_comments(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             num_comments: `str`
@@ -126,6 +156,11 @@ class Client:
 
         def upvotes(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             upvotes: `str`
@@ -136,6 +171,11 @@ class Client:
 
         def downvotes(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             downvotes: `str`
@@ -146,6 +186,11 @@ class Client:
 
         def score(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             score: `str`
@@ -156,6 +201,11 @@ class Client:
 
         def permalink(self, index: int):
             r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
+
             Returns
             -------
             permalink: `str`
@@ -199,7 +249,7 @@ class AsyncClient:
         """
 
         @staticmethod
-        async def subreddit_main(mode, name, limit):
+        async def _subreddit_main(mode, name, limit):
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"https://www.reddit.com/r/{name}/{mode}.json?limit={limit}") as resp:
                     return await resp.json()
@@ -210,11 +260,15 @@ class AsyncClient:
             self.limit = limit
             self.agent = ''.join(random.choices(
                 string.ascii_uppercase + string.digits, k=8))
-            self.json = await self.subreddit_main(self.mode, self.name, self.limit)
+            self.json = await self._subreddit_main(self.mode, self.name, self.limit)
 
 
         async def selftext(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -225,7 +279,11 @@ class AsyncClient:
             return selftext
 
         async def title(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -236,7 +294,11 @@ class AsyncClient:
             return title
 
         async def post_url(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -247,7 +309,11 @@ class AsyncClient:
             return post_url
 
         async def author(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -258,7 +324,11 @@ class AsyncClient:
             return author
 
         async def image(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -278,7 +348,11 @@ class AsyncClient:
                 raise KeyError('No image found')
 
         async def num_comments(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -289,7 +363,11 @@ class AsyncClient:
             return num_comments
 
         async def upvotes(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -300,7 +378,11 @@ class AsyncClient:
             return upvotes
 
         async def downvotes(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -311,7 +393,11 @@ class AsyncClient:
             return downvotes
 
         async def score(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -322,7 +408,11 @@ class AsyncClient:
             return score
 
         async def permalink(self, index: int):
-            r"""|coro|
+            r"""
+            Parameters
+            ----------
+            index : `int`
+                The index of the post to fetch (first post is marked as 0)
 
             Returns
             -------
@@ -333,8 +423,7 @@ class AsyncClient:
             return permalink
 
         async def raw_json(self):
-            r"""|coro|
-
+            r"""
             Returns
             -------
             raw_json: `dict`
